@@ -1,23 +1,35 @@
 {
   "expo": {
-    "name": "FINTECH",
-    "slug": "FINTECH",
+    "name": "PekalonganPay",
+    "slug": "pekalongan-pay",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "fintech",
-    "userInterfaceStyle": "automatic",
+    "scheme": "pekalonganpay",
+    "userInterfaceStyle": "dark",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "supportsTablet": false,
+      "bundleIdentifier": "com.pekalonganpay.app",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "PekalonganPay menggunakan Face ID untuk mengamankan transaksi Anda",
+        "NSLocationWhenInUseUsageDescription": "PekalonganPay memerlukan akses lokasi untuk menemukan UMKM dan masjid terdekat",
+        "NSContactsUsageDescription": "PekalonganPay memerlukan akses kontak untuk memudahkan transfer"
+      }
     },
     "android": {
+      "package": "com.pekalonganpay.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0A1628",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "backgroundImage": "./assets/images/android-icon-background.png"
       },
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_CONTACTS"
+      ]
     },
     "web": {
       "output": "static",
@@ -28,11 +40,28 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "android": {
-            "image": "./assets/images/splash-icon.png",
-            "imageWidth": 76
-          }
+          "backgroundColor": "#0A1628",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "PekalonganPay uses Face ID to secure your transactions"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "PekalonganPay needs your location to find nearby merchants and mosques"
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "PekalonganPay uses your contacts to make transfers easier"
         }
       ]
     ],
