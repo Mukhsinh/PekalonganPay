@@ -51,6 +51,7 @@ export default function TabsLayout() {
                     name={tab.name}
                     options={{
                         title: tab.title,
+                        tabBarLabel: tab.name === 'qris' ? () => null : undefined,
                         tabBarIcon: ({ focused, color }) => {
                             if (tab.name === 'qris') {
                                 return (

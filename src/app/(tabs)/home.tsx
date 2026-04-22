@@ -299,9 +299,9 @@ function ServiceItem({ menu, router }: any) {
                 <View style={[styles.iconShadow, { backgroundColor: menu.color }]} />
                 <View style={[styles.iconMain, { transform: [{ perspective: 1000 }, { rotateX: '15deg' }, { rotateY: '-15deg' }] }]}>
                     {menu.isMCI ? (
-                        <MaterialCommunityIcons name={menu.icon as any} size={48} color={menu.color} style={{ textShadowColor: 'rgba(0,0,0,0.2)', textShadowOffset: { width: 2, height: 2 }, textShadowRadius: 4 }} />
+                        <MaterialCommunityIcons name={menu.icon as any} size={32} color={menu.color} style={{ textShadowColor: 'rgba(0,0,0,0.1)', textShadowOffset: { width: 1, height: 1 }, textShadowRadius: 2 }} />
                     ) : (
-                        <Ionicons name={menu.icon as any} size={48} color={menu.color} style={{ textShadowColor: 'rgba(0,0,0,0.2)', textShadowOffset: { width: 2, height: 2 }, textShadowRadius: 4 }} />
+                        <Ionicons name={menu.icon as any} size={32} color={menu.color} style={{ textShadowColor: 'rgba(0,0,0,0.1)', textShadowOffset: { width: 1, height: 1 }, textShadowRadius: 2 }} />
                     )}
                 </View>
             </View>
@@ -394,16 +394,18 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     brandPekalongan: {
-        fontSize: 22,
-        fontWeight: '800',
+        fontSize: 24,
+        fontWeight: '300',
         color: COLORS.primary,
-        letterSpacing: -0.5,
+        letterSpacing: 1,
     },
     brandPay: {
-        fontSize: 16,
-        fontWeight: '900',
+        fontSize: 14,
+        fontWeight: '800',
         color: COLORS.accent,
         marginTop: -6,
+        letterSpacing: 3,
+        textTransform: 'uppercase',
     },
     headerRight: {
         flexDirection: 'row',
@@ -442,10 +444,12 @@ const styles = StyleSheet.create({
         borderColor: COLORS.white,
     },
     heroContainer: {
-        height: 300,
+        height: 220,
         width: '100%',
         backgroundColor: COLORS.text,
         overflow: 'hidden',
+        borderBottomLeftRadius: 40,
+        borderBottomRightRadius: 40,
     },
     heroImgFull: {
         width: '100%',
@@ -608,22 +612,23 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
     },
     prayerName: {
-        fontSize: 12,
-        color: COLORS.textMuted,
-        fontWeight: '600',
+        fontSize: 11,
+        color: COLORS.text,
+        fontWeight: '400',
         marginBottom: 4,
     },
     prayerNameActive: {
-        color: 'rgba(255,255,255,0.8)',
+        color: COLORS.primary,
+        fontWeight: '700',
     },
     prayerTime: {
-        fontSize: 18,
-        fontWeight: '900',
+        fontSize: 15,
+        fontWeight: '700',
         color: COLORS.primary,
     },
     prayerTimeActive: {
         color: COLORS.primary,
-        fontSize: 20,
+        fontSize: 16,
     },
     serviceGrid: {
         paddingHorizontal: 20,
@@ -669,32 +674,32 @@ const styles = StyleSheet.create({
         color: COLORS.primary,
     },
     icon3DFrameless: {
-        width: 72,
-        height: 72,
+        width: 56,
+        height: 56,
         justifyContent: 'center',
         alignItems: 'center',
     },
     iconShadow: {
         position: 'absolute',
-        width: 48,
-        height: 24,
+        width: 36,
+        height: 18,
         borderRadius: 20,
-        bottom: 8,
-        opacity: 0.15,
+        bottom: 6,
+        opacity: 0.1,
         transform: [{ scaleX: 1.2 }, { rotateX: '60deg' }],
     },
     iconMain: {
-        width: 64,
-        height: 64,
-        borderRadius: 20,
+        width: 48,
+        height: 48,
+        borderRadius: 16,
         backgroundColor: 'transparent',
         justifyContent: 'center',
         alignItems: 'center',
     },
     serviceLabel: {
-        marginTop: 10,
-        fontSize: 11,
-        fontWeight: '800',
+        marginTop: 6,
+        fontSize: 10,
+        fontWeight: '600',
         color: COLORS.text,
         textAlign: 'center',
     },
@@ -709,9 +714,10 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     sectionTitle: {
-        fontSize: 18,
-        fontWeight: '900',
+        fontSize: 16,
+        fontWeight: '300',
         color: COLORS.text,
+        letterSpacing: 0.5,
     },
     seeAll: {
         fontSize: 13,
